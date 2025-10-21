@@ -14,7 +14,7 @@ let currentSalahName = null;
 
 async function fetchSalahTimes() {
   try {
-    const response = await fetch('http://api.aladhan.com/v1/timingsByCity?city=Leicester&country=UK&method=2');
+    const response = await fetch('https://api.aladhan.com/v1/timingsByCity?city=Leicester&country=UK&method=2');
     const data = await response.json();
     const timings = data.data.timings;
     
