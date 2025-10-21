@@ -5,11 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Prayer Times</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1> </h1>
-    <ul>
+  <div id="salah-screen" class="hidden">
+    <div id="salah-text"></div>
   </div>
-  <script src="script.js"></script>
+  
+  <div id="main-content">
+    <div class="left-panel">
+      <div class="clock-section">
+        <div id="clock"></div>
+      </div>
+      <div class="prayer-times-section">
+        <div class="heading-row">
+          <span class="heading-begin">Begin</span>
+          <span class="heading-jamat">Jamat</span>
+        </div>
+        <div id="prayer-times-list"></div>
+      </div>
+    </div>
+    <div class="right-panel"></div>
+  </div>
+  
+  <div id="warning-banner" class="hidden"></div>
+  
+  <script src="style.js"></script>
 </body>
 </html>
