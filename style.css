@@ -156,3 +156,177 @@ body {
 .hidden {
   display: none !important;
 }
+
+@media (max-width: 768px) and (orientation: portrait) {
+  #main-content {
+    flex-direction: column;
+  }
+
+  .left-panel {
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .clock-section {
+    height: auto;
+    padding: 30px 20px;
+  }
+
+  #clock {
+    font-size: 48px;
+  }
+
+  .prayer-times-section {
+    padding: 20px 15px;
+  }
+
+  .heading-row {
+    padding: 0 10px;
+    margin-bottom: 15px;
+  }
+
+  .heading-begin, .heading-jamat {
+    font-size: 28px;
+  }
+
+  .heading-jamat {
+    margin-right: 10px;
+  }
+
+  #prayer-times-list {
+    gap: 15px;
+  }
+
+  .prayer-row {
+    padding: 0 10px;
+    font-size: 24px;
+    gap: 15px;
+  }
+
+  .prayer-time, .jamaah-time {
+    min-width: 60px;
+  }
+
+  .right-panel {
+    display: none;
+  }
+
+  #salah-text.arabic {
+    font-size: 40px;
+    line-height: 1.6;
+  }
+
+  #salah-text.english {
+    font-size: 28px;
+    line-height: 1.5;
+  }
+
+  #warning-banner {
+    height: 60px;
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+  #main-content {
+    flex-direction: column;
+  }
+
+  .left-panel {
+    width: 100%;
+    height: 100%;
+  }
+
+  .clock-section {
+    height: auto;
+    padding: 20px 15px;
+  }
+
+  #clock {
+    font-size: 36px;
+  }
+
+  .prayer-times-section {
+    padding: 15px 10px;
+  }
+
+  .heading-row {
+    padding: 0 10px;
+    margin-bottom: 10px;
+  }
+
+  .heading-begin, .heading-jamat {
+    font-size: 22px;
+  }
+
+  .heading-jamat {
+    margin-right: 10px;
+  }
+
+  #prayer-times-list {
+    gap: 10px;
+  }
+
+  .prayer-row {
+    padding: 0 10px;
+    font-size: 18px;
+    gap: 10px;
+  }
+
+  .prayer-time, .jamaah-time {
+    min-width: 50px;
+  }
+
+  .right-panel {
+    display: none;
+  }
+
+  #salah-text.arabic {
+    font-size: 36px;
+    line-height: 1.5;
+  }
+
+  #salah-text.english {
+    font-size: 24px;
+    line-height: 1.4;
+  }
+
+  #warning-banner {
+    height: 50px;
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) and (orientation: portrait) {
+  #clock {
+    font-size: 36px;
+  }
+
+  .heading-begin, .heading-jamat {
+    font-size: 22px;
+  }
+
+  .prayer-row {
+    font-size: 20px;
+    gap: 10px;
+  }
+
+  .prayer-time, .jamaah-time {
+    min-width: 50px;
+  }
+
+  #salah-text.arabic {
+    font-size: 32px;
+  }
+
+  #salah-text.english {
+    font-size: 22px;
+  }
+
+  #warning-banner {
+    height: 50px;
+    font-size: 24px;
+    padding: 0 10px;
+  }
+}
