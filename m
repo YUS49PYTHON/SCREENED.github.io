@@ -11,8 +11,8 @@ Shurooq_Jamaah = " - -"
 # Shurooq
 Dhuhr_Jamaah = "13:30"
 Asr_Jamaah = "16:50"
-Maghrib_Jamaah = "18:19"
-Isha_Jamaah = "20:15"
+Maghrib_Jamaah = "17:55"
+Isha_Jamaah = "20:00"
 ##########################
 
 #DO NOT CHANGE ANYTHING BELOW THIS LINE
