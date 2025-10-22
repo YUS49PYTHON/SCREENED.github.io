@@ -1,10 +1,11 @@
-const CACHE_NAME = 'my-pwa-cache-v1';
+const CACHE_NAME = 'masjid-screened-cache-v1';
 const urlsToCache = [
   '/',
   '/index.html',
-  '/styles.css',
-  '/script.js',
-  // Add your other important files here
+  '/style.css',
+  '/style.js',
+  '/manifest.json',
+  // Google Fonts will be cached on first load
 ];
 
 // Install event - cache files
