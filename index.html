@@ -8,6 +8,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#0099ff">
+  
+  <!-- iOS specific meta tags -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Masjid Screened">
+  <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
 </head>
 <body>
   <div id="salah-screen" class="hidden">
@@ -33,5 +43,20 @@
   <div id="warning-banner" class="hidden"></div>
   
   <script src="style.js"></script>
+  
+  <!-- PWA Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then((registration) => {
+            console.log('Masjid Screened PWA registered successfully!');
+          })
+          .catch((error) => {
+            console.log('Service Worker registration failed:', error);
+          });
+      });
+    }
+  </script>
 </body>
 </html>
