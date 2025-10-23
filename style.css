@@ -157,6 +157,39 @@ body {
   display: none !important;
 }
 
+/* Install App Button Styles */
+.install-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #0099ff, #0077cc);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 153, 255, 0.4);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.install-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 153, 255, 0.6);
+  background: linear-gradient(135deg, #0077cc, #0099ff);
+}
+
+.install-btn:active {
+  transform: translateY(0);
+}
+
+.install-btn.hidden {
+  display: none;
+}
+
 @media (max-width: 768px) and (orientation: portrait) {
   #main-content {
     flex-direction: column;
@@ -225,6 +258,14 @@ body {
   #warning-banner {
     height: 60px;
     font-size: 32px;
+  }
+
+  /* Mobile responsive install button */
+  .install-btn {
+    bottom: 15px;
+    right: 15px;
+    padding: 10px 20px;
+    font-size: 14px;
   }
 }
 
@@ -296,6 +337,14 @@ body {
     height: 50px;
     font-size: 28px;
   }
+
+  /* Landscape install button */
+  .install-btn {
+    bottom: 10px;
+    right: 10px;
+    padding: 8px 16px;
+    font-size: 12px;
+  }
 }
 
 @media (max-width: 480px) and (orientation: portrait) {
@@ -328,5 +377,13 @@ body {
     height: 50px;
     font-size: 24px;
     padding: 0 10px;
+  }
+
+  /* Small screen install button */
+  .install-btn {
+    bottom: 10px;
+    right: 10px;
+    padding: 8px 16px;
+    font-size: 12px;
   }
 }
