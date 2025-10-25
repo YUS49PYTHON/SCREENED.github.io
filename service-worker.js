@@ -4,6 +4,7 @@ const urlsToCache = [
   '/index.html',
   '/style.css',
   '/style.js',
+  '/app.js',
   '/manifest.json',
   // Google Fonts will be cached on first load
 ];
@@ -39,6 +40,12 @@ self.addEventListener('activate', (event) => {
 
 // Fetch event - serve from cache, fallback to network
 self.addEventListener('fetch', (event) => {
+  // Skip caching for POST requests and API calls
+  if (event.request.method !== 'GET' || event.request.url.includes('/api/')) {
+    event.respondWith(fetch(event.request));
+    return;
+  }
+
   event.respondWith(
     caches.match(event.request)
       .then((response) => {
