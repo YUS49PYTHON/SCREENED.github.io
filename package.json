@@ -1,12 +1,12 @@
 {
   "dependencies": {
-    "@vercel/kv": "^3.0.0"
+    "@vercel/kv": "^3.0.0",
+    "redis": "^5.9.0"
   },
   "name": "new-folder",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
