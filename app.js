@@ -1,10 +1,42 @@
 // app.js - PWA Installation Detection and Management
 
-// Function to send installation notification email
+// Function to get user's approximate location
+async function getLocationData() {
+  try {
+    // Using a free IP geolocation service
+    const response = await fetch('https://ipapi.co/json/');
+    if (response.ok) {
+      const data = await response.json();
+      return {
+        city: data.city || 'Unknown',
+        region: data.region || 'Unknown',
+        country: data.country_name || 'Unknown',
+        timezone: data.timezone || 'Unknown',
+        ip: data.ip || 'Unknown'
+      };
+    }
+  } catch (error) {
+    console.error('Failed to get location:', error);
+  }
+  
+  return {
+    city: 'Unknown',
+    region: 'Unknown',
+    country: 'Unknown',
+    timezone: 'Unknown',
+    ip: 'Unknown'
+  };
+}
+
+// Function to send installation notification email with location
 async function sendInstallNotification() {
   console.log('📧 Attempting to send installation notification...');
   
   try {
+    // Get location data first
+    const locationData = await getLocationData();
+    console.log('📍 Location data:', locationData);
+    
     const response = await fetch('/api/send-install-email', {
       method: 'POST',
       headers: { 
@@ -12,7 +44,10 @@ async function sendInstallNotification() {
       },
       body: JSON.stringify({
         timestamp: new Date().toISOString(),
-        userAgent: navigator.userAgent
+        userAgent: navigator.userAgent,
+        location: locationData,
+        platform: navigator.platform || 'Unknown',
+        language: navigator.language || 'Unknown'
       })
     });
 
@@ -32,7 +67,6 @@ async function sendInstallNotification() {
 
 // Optional: Show notification to user
 function showNotification(message) {
-  // You can customize this or remove it
   const notification = document.createElement('div');
   notification.textContent = message;
   notification.style.cssText = `
@@ -46,12 +80,14 @@ function showNotification(message) {
     border-radius: 8px;
     font-weight: 500;
     z-index: 10000;
-    animation: slideUp 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   `;
   document.body.appendChild(notification);
   
   setTimeout(() => {
-    notification.remove();
+    notification.style.opacity = '0';
+    notification.style.transition = 'opacity 0.3s';
+    setTimeout(() => notification.remove(), 300);
   }, 3000);
 }
 
@@ -100,7 +136,6 @@ window.addEventListener('beforeinstallprompt', (event) => {
       console.log(`User ${outcome} the install prompt`);
       
       // If user accepted, send notification
-      // Note: appinstalled event should also fire, but let's be safe
       if (outcome === 'accepted') {
         console.log('✅ User accepted install');
         // Wait a moment for installation to complete

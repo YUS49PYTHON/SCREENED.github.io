@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "@vercel/kv": "^3.0.0"
+  },
+  "name": "new-folder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YUS49PYTHON/New-folder.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YUS49PYTHON/New-folder/issues"
+  },
+  "homepage": "https://github.com/YUS49PYTHON/New-folder#readme"
+}
