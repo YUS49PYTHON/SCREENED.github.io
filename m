@@ -1,8 +1,8 @@
 import datetime
 import requests
 import pygame
-#import arabic_reshaper
-#from bidi.algorithm import get_display
+import arabic_reshaper
+from bidi.algorithm import get_display
 import time
 #ONLY CHANGE JAMAAT TIMES BY EDITING THE TIMES IN SPEECH MARKS
 ##########################
