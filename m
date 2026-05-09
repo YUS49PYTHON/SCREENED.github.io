@@ -1,15 +1,15 @@
 import datetime
 import requests
 import pygame
-import arabic_reshaper
-from bidi.algorithm import get_display
+#import arabic_reshaper
+#from bidi.algorithm import get_display
 import time
 #ONLY CHANGE JAMAAT TIMES BY EDITING THE TIMES IN SPEECH MARKS
 ##########################
 Fajr_Jamaah = "05:00"
 Shurooq_Jamaah = " - -"
 Dhuhr_Jamaah = "13:30"
-Asr_Jamaah = "16:50"
+Asr_Jamaah = "16:56"
 Maghrib_Jamaah = "18:19"
 Isha_Jamaah = "20:15"
 ##########################
