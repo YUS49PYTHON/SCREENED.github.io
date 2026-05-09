@@ -8,8 +8,9 @@ import time
 ##########################
 Fajr_Jamaah = "05:00"
 Shurooq_Jamaah = " - -"
+# Shurooq
 Dhuhr_Jamaah = "13:30"
-Asr_Jamaah = "16:56"
+Asr_Jamaah = "16:50"
 Maghrib_Jamaah = "18:19"
 Isha_Jamaah = "20:15"
 ##########################
